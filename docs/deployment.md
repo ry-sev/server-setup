@@ -28,20 +28,25 @@ From your local Eleventy project directory:
 npm run build
 
 # Deploy to server
-./deploy.sh --host myserver --source ./_site
+./deploy.sh --host myserver --domain example.com --source ./_site
 
-# With custom paths
-./deploy.sh --host myserver --source ./dist --dest /var/www/example.com
+# With short flags
+./deploy.sh -h myserver -d example.com -s ./dist
+
+# Dry run (preview without deploying)
+./deploy.sh --host myserver --domain example.com --dry-run
 ```
 
 ### Options
 
 | Flag | Description | Default |
 |------|-------------|---------|
-| `--host` | Server hostname or IP | Required |
-| `--source` | Local directory to deploy | `./_site` |
-| `--dest` | Remote web root | `/var/www/html` |
-| `--user` | Remote user | `deploy` |
+| `-h, --host` | Server hostname or IP | Required |
+| `-d, --domain` | Domain name | Required |
+| `-s, --source` | Local build directory | `./_site` |
+| `-u, --user` | Remote user | `deploy` |
+| `-p, --port` | SSH port | `22` |
+| `-n, --dry-run` | Preview changes without deploying | - |
 
 ## Method 2: Manual rsync
 
