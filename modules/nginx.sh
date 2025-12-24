@@ -160,7 +160,7 @@ EOF
 # Static File Caching
 
 # Cache static assets
-location ~* \.(jpg|jpeg|png|gif|ico|css|js|pdf|woff|woff2|ttf|svg|eot)$ {
+location ~* \.(jpg|jpeg|png|gif|webp|ico|css|js|pdf|woff|woff2|ttf|svg|eot)$ {
     expires 30d;
     add_header Cache-Control "public, immutable";
     include snippets/security-headers.conf;
